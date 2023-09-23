@@ -31,9 +31,10 @@ class _WishlistState extends State<Wishlist> {
         listenWhen: (previous, current) => current is WishlistActionState,
         listener: (context, state) {
           if (state is WishlistItemRemovedActionState) {
+            final removedProduct = state.removedProduct;
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text("Removed from wishlist"),
+                content: Text("${removedProduct.name} removed from wishlist"),
               ),
             );
           }

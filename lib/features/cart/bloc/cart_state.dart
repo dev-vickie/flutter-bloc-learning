@@ -4,7 +4,7 @@ part of 'cart_bloc.dart';
 sealed class CartState {}
 
 @immutable
-sealed class CartActionState extends CartState{}
+sealed class CartActionState extends CartState {}
 
 class CartInitial extends CartState {}
 
@@ -16,4 +16,8 @@ class CartLoadingSuccessState extends CartState {
   CartLoadingSuccessState({required this.cartProducts});
 }
 
-class CartItemRemovedActionState extends CartActionState {}
+class CartItemRemovedActionState extends CartActionState {
+  final ProductDataModel removedItem;
+
+  CartItemRemovedActionState({required this.removedItem});
+}

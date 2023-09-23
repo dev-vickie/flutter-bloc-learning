@@ -28,9 +28,10 @@ class _CartState extends State<Cart> {
         bloc: cartBloc,
         listener: (context, state) {
           if (state is CartItemRemovedActionState) {
+            final item = state.removedItem;
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text("Product removed from Cart"),
+                content: Text("${item.name} removed from Cart"),
               ),
             );
           }

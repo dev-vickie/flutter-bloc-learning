@@ -42,15 +42,17 @@ class _HomeState extends State<Home> {
             }),
           );
         } else if (state is HomeProductWishlistedActionState) {
+          final item = state.wishlistProduct;
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text("Product Wishlisted Successfully"),
+              content: Text("${item.name} Wishlisted Successfully"),
             ),
           );
         } else if (state is HomeProductCartedActionState) {
+          final item = state.cartProduct;
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text("Product Carted Successfully"),
+              content: Text("${item.name} Carted Successfully"),
             ),
           );
         }
@@ -69,6 +71,7 @@ class _HomeState extends State<Home> {
             final products = (state as HomeLoadingSuccessState).products;
             return Scaffold(
               appBar: AppBar(
+                centerTitle: true,
                 title: const Text("Vic grocery"),
                 actions: [
                   IconButton(

@@ -23,6 +23,14 @@ class HomeNavigateToWishlistActionState extends HomeActionState {}
 
 class HomeNavigateToCartActionState extends HomeActionState {}
 
-class HomeProductCartedActionState extends HomeActionState{}
+class HomeProductCartedActionState extends HomeActionState {
+  final ProductDataModel cartProduct;
 
-class HomeProductWishlistedActionState extends HomeActionState{}
+  HomeProductCartedActionState({required this.cartProduct});
+}
+
+class HomeProductWishlistedActionState extends HomeActionState {
+  final ProductDataModel wishlistProduct;
+
+  HomeProductWishlistedActionState({required this.wishlistProduct});
+}
